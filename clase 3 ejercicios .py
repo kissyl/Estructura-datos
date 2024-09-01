@@ -18,7 +18,6 @@ else:
 print(" el resultado es", resultado )
 
 
-def 
 
 
 
