@@ -1,5 +1,3 @@
-from sympy import resultant
-
 
 operacion = input ("operacion (suma,resta ,multiplicacion, division): ")
 num1 = int(input("primer numero"))
@@ -16,10 +14,3 @@ elif operacion == 'division':
 else:
     print ("operacion no valida ")
 print(" el resultado es", resultado )
-
-
-
-
-
-
-    
