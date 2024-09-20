@@ -13,7 +13,7 @@ class Nodo:
         self.animal = animal
         self.next = None
 
-class ListaEnlazadaAnimales:
+class ListaEnlazada:
     def __init__(self):
         self.cabeza = None
 
@@ -36,8 +36,48 @@ class ListaEnlazadaAnimales:
             actual = actual.next
         return False
 
-    def enseñar_animales_recursivo(self,  nodo):
+    def mostrar_animales_recursivo(self,  nodo):
         if nodo is None:
-           print(nodo.animal)
-        self.mostrar_animales_recursivo(nodo.next)
+            print(nodo.animal)
+            self.mostrar_animales_recursivo(nodo.next)
+
+    def mostrar_animales_bucle(self):
+        actual = self.cabeza
+        while actual is not None:
+            print(actual.animal)
+            actual = actual.next
         
+def agregar_animales_a_lista(zoologico):
+    while True:
+        print("---♡-- Agregar Animal al Zoológico k --♡---")
+        nombre = input("Nombre del animal: ")
+        tipo = input("Tipo de animal (Felino, Mamifero, Ave, Reptil, Anfibio, Pez): ")
+        edad = int(input("Edad del animal: "))
+             
+        zoologico.agregar_animal(nombre, edad, tipo)
+
+        continuar = input("¿Desea agregar otro animal? (s/n): ")
+        if continuar != 's':
+            break
+         
+
+Lista_de_animales = []
+búho = Animal("Zeus", 2, "Ave")
+jirafa = Animal("Nessa", 4, "Mamifero")
+Leopardo = Animal("Garras", 5, "Felino")
+Rana = Animal("Azul", 1, "Anfibio")
+Serpiente = Animal("Pitou", 3, "Reptil")
+    
+
+zoologico = ListaEnlazada ()
+print ("-" * 60)
+print ("Lista de animales ♡ ")
+print ()
+for animal in Lista_de_animales:
+    print (animal)
+
+agregar_animales_a_lista(zoologico)
+zoologico.agregar_animales(lista_de_animales)
+
+print("Animales en el zoologico (recursivo):")
+zoologico.mostar_animales()
